@@ -26,7 +26,6 @@ public class HomeFragment extends Fragment {
 		final View view = inflater.inflate(R.layout.home_fragment, container, false);
 		
 		req = new RequestNetwork(getActivity());
-		req.startRequestNetwork(RequestNetworkController.GET, "https://api.github.com/users/curink", "profile", req_listener);
 		
 		req_listener = new RequestNetwork.RequestListener() {
 			@Override
@@ -43,6 +42,8 @@ public class HomeFragment extends Fragment {
 				Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
 			}
 		};
+
+		req.startRequestNetwork(RequestNetworkController.GET, "https://api.github.com/users/curink", "profile", req_listener);
 		
 		return view;
 	}
