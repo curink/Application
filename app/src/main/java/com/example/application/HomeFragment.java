@@ -30,12 +30,7 @@ public class HomeFragment extends Fragment {
 		req_listener = new RequestNetwork.RequestListener() {
 			@Override
 			public void onResponse(final String tag, final String response, final HashMap<String, Object> headers, final int status) {
-				responseMap = new Gson().fromJson(response, new TypeToken<HashMap<String, Object>>(){}.getType());
-				if(status == 200) {
-					Toast.makeText(getActivity(), responseMap.get("name"), Toast.LENGTH_SHORT).show();
-				} else {
-					Toast.makeText(getActivity(), responseMap.get("name"), Toast.LENGTH_LONG).show();
-				}
+			        Toast.makeText(getActivity(), responseMap.get("name"), Toast.LENGTH_SHORT).show();
 			}
 			@Override
 			public void onErrorResponse(final String tag, final String message) {
